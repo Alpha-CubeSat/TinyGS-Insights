@@ -1,3 +1,5 @@
+package TinyGS;
+
 import java.io.*;
 import java.util.Scanner;
 import java.net.URL;
@@ -50,7 +52,7 @@ public class packetScrape {
         sc.useDelimiter(",");
         String packetID = "";
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(output, true)))) {
-            if (fileNo == 0) out.println("Frequency, Spreading Factor, Bandwidth, Coding Rate, Satellite, Packet ID, Transmit Power, Station Number");
+            if (fileNo == 0) out.println("Transmit Power, Stations Received, Frequency, Spreading Factor, Bandwidth, Coding Rate, Satellite, Station List");
             while(sc.hasNext()){
                 String line = sc.next();
                 if (line.contains("stationNumber") || line.contains("tinygsTxPower") || line.contains("satellite") || line.contains("freq")
